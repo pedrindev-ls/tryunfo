@@ -92,9 +92,9 @@ class Form extends Component {
             value={ cardRare }
             onChange={ onInputChange }
           >
-            <opition value="normal">normal</opition>
-            <opition value="raro">raro</opition>
-            <opition value="muito-raro">muito raro</opition>
+            <option value="normal">normal</option>
+            <option value="raro">raro</option>
+            <option value="muito-raro">muito raro</option>
           </select>
         </label>
         <label htmlFor="trunfo">
