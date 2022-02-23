@@ -3,10 +3,12 @@ import Form from './components/Form';
 
 class App extends React.Component {
   constructor() {
-    super()
-    this.state = {
-      
-    }
+    super();
+    this.onInputChange = this.onInputChange.bind(this);
+  }
+
+  onInputChange() {
+    console.log(1);
   }
 
   render() {
