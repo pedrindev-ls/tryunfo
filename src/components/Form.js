@@ -94,7 +94,7 @@ class Form extends Component {
           >
             <option value="normal">normal</option>
             <option value="raro">raro</option>
-            <option value="muito-raro">muito raro</option>
+            <option value="muito raro">muito raro</option>
           </select>
         </label>
         <label htmlFor="trunfo">
