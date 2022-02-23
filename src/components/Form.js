@@ -24,7 +24,7 @@ class Form extends Component {
           <input
             type="text"
             id="card-name"
-            name="card-name"
+            name="cardName"
             data-testid="name-input"
             value={ cardName }
             onChange={ onInputChange }
@@ -34,7 +34,7 @@ class Form extends Component {
           Descrição:
           <textarea
             id="card-description"
-            name="card-description"
+            name="cardDescription"
             data-testid="description-input"
             value={ cardDescription }
             onChange={ onInputChange }
@@ -44,7 +44,7 @@ class Form extends Component {
           Atributo 1:
           <input
             id="attr1"
-            name="attr1"
+            name="cardAttr1"
             type="number"
             data-testid="attr1-input"
             value={ cardAttr1 }
@@ -55,7 +55,7 @@ class Form extends Component {
           Atributo 2:
           <input
             id="attr2"
-            name="attr2"
+            name="cardAttr2"
             type="number"
             data-testid="attr2-input"
             value={ cardAttr2 }
@@ -66,7 +66,7 @@ class Form extends Component {
           Atributo 3:
           <input
             id="attr3"
-            name="attr3"
+            name="cardAttr3"
             type="number"
             data-testid="attr3-input"
             value={ cardAttr3 }
@@ -78,7 +78,7 @@ class Form extends Component {
           <input
             type="text"
             id="card-img"
-            name="card-img"
+            name="cardImage"
             data-testid="image-input"
             value={ cardImage }
             onChange={ onInputChange }
@@ -87,7 +87,7 @@ class Form extends Component {
         <label htmlFor="rarity">
           <select
             id="rarity"
-            name="rarity"
+            name="cardRare"
             data-testid="rare-input"
             value={ cardRare }
             onChange={ onInputChange }
@@ -100,7 +100,7 @@ class Form extends Component {
         <label htmlFor="trunfo">
           <input
             id="trunfo"
-            name="trunfo"
+            name="cardTrunfo"
             type="checkbox"
             data-testid="trunfo-input"
             checked={ cardTrunfo }
