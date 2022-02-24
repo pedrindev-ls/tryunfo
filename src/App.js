@@ -43,10 +43,8 @@ class App extends React.Component {
     const maxNum = 210;
     const maxSingleNum = 90;
     const minSingleNum = 0;
-    console.log(sum);
 
     const higher = sum <= maxNum;
-    console.log(higher);
     const existName = cardName.length > 0;
     const existDescription = cardDescription.length > 0;
     const existImg = cardImage.length > 0;
