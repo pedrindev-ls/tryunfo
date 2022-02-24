@@ -13,11 +13,10 @@ class Form extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      // hasTrunfo,
-      // isSaveButtonDisabled,
+      hasTrunfo,
+      isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
-      buttonStatus,
     } = this.props;
     return (
       <form>
@@ -115,6 +114,7 @@ class Form extends Component {
             data-testid="trunfo-input"
             checked={ cardTrunfo }
             onChange={ onInputChange }
+            disabled={ hasTrunfo }
             required
           />
           Carta Trunfo
@@ -124,7 +124,7 @@ class Form extends Component {
           id="save-btn"
           type="submit"
           data-testid="save-button"
-          disabled={ buttonStatus }
+          disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
         >
           Salvar
