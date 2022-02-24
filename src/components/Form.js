@@ -101,6 +101,7 @@ class Form extends Component {
             onChange={ onInputChange }
             required
           >
+            <option> </option>
             <option value="normal">normal</option>
             <option value="raro">raro</option>
             <option value="muito raro">muito raro</option>

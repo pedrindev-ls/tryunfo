@@ -24,24 +24,45 @@ class App extends React.Component {
 
   onInputChange({ target }) {
     const { name, value } = target;
-    this.setState({ [name]: value });
-    this.isSaveButtonDisabled();
+    const tValue = target.type === 'checkbox' ? target.checked : value;
+    this.setState({ [name]: tValue }, this.isSaveButtonDisabled);
   }
 
   isSaveButtonDisabled() {
     const {
       cardName,
       cardDescription,
-      // cardAttr1,
-      // cardAttr2,
-      // cardAttr3,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
       cardImage,
-      // cardRare,
+      cardRare,
       // cardTrunfo,
       // button,
     } = this.state;
-    if (cardName && cardDescription && cardImage) {
-      this.setState({ button: false });
+    const sum = +cardAttr1 + +cardAttr2 + +cardAttr3;
+    const maxNum = 210;
+    const maxSingleNum = 90;
+    const minSingleNum = 0;
+
+    if (cardName && cardDescription && cardImage && cardRare) {
+      if (sum <= maxNum) {
+        if (+cardAttr1 <= maxSingleNum && +cardAttr1 >= minSingleNum) {
+          if (+cardAttr2 <= maxSingleNum && +cardAttr2 >= minSingleNum) {
+            if (+cardAttr3 <= maxSingleNum && +cardAttr3 >= minSingleNum) {
+              this.setState({ button: false });
+            } else {
+              this.setState({ button: true });
+            }
+          } else {
+            this.setState({ button: true });
+          }
+        } else {
+          this.setState({ button: true });
+        }
+      } else {
+        this.setState({ button: true });
+      }
     } else {
       this.setState({ button: true });
     }
