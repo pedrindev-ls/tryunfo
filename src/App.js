@@ -9,7 +9,7 @@ class App extends React.Component {
     this.onInputChange = this.onInputChange.bind(this);
     this.validateButton = this.validateButton.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
-
+    this.ifHaveTrunfo = this.ifHaveTrunfo.bind(this);
     this.state = {
       cardName: '',
       cardDescription: '',
@@ -21,6 +21,7 @@ class App extends React.Component {
       cardTrunfo: false,
       isSaveButtonDisabled: true,
       cards: [],
+      hasTrunfo: false,
     };
   }
 
@@ -53,7 +54,9 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
     });
-    console.log(cards);
+    if (cardTrunfo) {
+      this.ifHaveTrunfo();
+    }
     this.setState({
       cardName: '',
       cardDescription: '',
@@ -62,6 +65,13 @@ class App extends React.Component {
       cardAttr2: 0,
       cardAttr3: 0,
       cardRare: 'normal',
+    });
+  }
+
+  ifHaveTrunfo() {
+    this.setState({
+      cardTrunfo: false,
+      hasTrunfo: true,
     });
   }
 
@@ -118,6 +128,8 @@ class App extends React.Component {
       cardTrunfo,
       isSaveButtonDisabled,
       cards,
+      hasTrunfo,
+      textTrunfo,
     } = this.state;
     return (
       <div>
@@ -133,9 +145,11 @@ class App extends React.Component {
               cardImage={ cardImage }
               cardRare={ cardRare }
               cardTrunfo={ cardTrunfo }
+              hasTrunfo={ hasTrunfo }
               onInputChange={ this.onInputChange }
               isSaveButtonDisabled={ isSaveButtonDisabled }
               onSaveButtonClick={ this.onSaveButtonClick }
+              textTrunfo={ textTrunfo }
             />
           </div>
           <div>

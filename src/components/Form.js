@@ -18,6 +18,11 @@ class Form extends Component {
       onInputChange,
       onSaveButtonClick,
     } = this.props;
+
+    // if (!hasTrunfo) {
+
+    // }
+
     return (
       <form>
         <label htmlFor="card-name">
@@ -145,6 +150,7 @@ Form.propTypes = {
   isSaveButtonDisabled: PropTypes.bool,
   onInputChange: PropTypes.func,
   onSaveButtonClick: PropTypes.func,
+  textTrunfo: PropTypes.string,
 }.isRequired;
 
 export default Form;
