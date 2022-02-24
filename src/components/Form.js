@@ -114,7 +114,6 @@ class Form extends Component {
             checked={ cardTrunfo }
             onChange={ onInputChange }
             disabled={ hasTrunfo }
-            required
           />
           Carta Trunfo
         </label>

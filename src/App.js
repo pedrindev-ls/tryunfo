@@ -8,17 +8,19 @@ class App extends React.Component {
     super();
     this.onInputChange = this.onInputChange.bind(this);
     this.validateButton = this.validateButton.bind(this);
+    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
 
     this.state = {
       cardName: '',
       cardDescription: '',
-      cardAttr1: '',
-      cardAttr2: '',
-      cardAttr3: '',
+      cardAttr1: 0,
+      cardAttr2: 0,
+      cardAttr3: 0,
       cardImage: '',
-      cardRare: '',
+      cardRare: 'normal',
       cardTrunfo: false,
       isSaveButtonDisabled: true,
+      cards: [],
     };
   }
 
@@ -26,6 +28,19 @@ class App extends React.Component {
     const { name, value } = target;
     const tValue = target.type === 'checkbox' ? target.checked : value;
     this.setState({ [name]: tValue }, this.validateButton);
+  }
+
+  onSaveButtonClick(event) {
+    event.preventDefault();
+    this.setState({
+      cardName: '',
+      cardDescription: '',
+      cardImage: '',
+      cardAttr1: 0,
+      cardAttr2: 0,
+      cardAttr3: 0,
+      cardRare: 'normal',
+    });
   }
 
   validateButton() {
@@ -80,6 +95,7 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
       isSaveButtonDisabled,
+      cards,
     } = this.state;
     return (
       <div>
@@ -97,6 +113,7 @@ class App extends React.Component {
               cardTrunfo={ cardTrunfo }
               onInputChange={ this.onInputChange }
               isSaveButtonDisabled={ isSaveButtonDisabled }
+              onSaveButtonClick={ this.onSaveButtonClick }
             />
           </div>
           <div>
@@ -110,6 +127,7 @@ class App extends React.Component {
               cardRare={ cardRare }
               cardTrunfo={ cardTrunfo }
               onInputChange={ this.onInputChange }
+              whereSave={ cards }
             />
           </div>
         </div>
