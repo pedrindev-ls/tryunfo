@@ -32,6 +32,28 @@ class App extends React.Component {
 
   onSaveButtonClick(event) {
     event.preventDefault();
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+      cards,
+    } = this.state;
+    cards.push({
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+    });
+    console.log(cards);
     this.setState({
       cardName: '',
       cardDescription: '',
