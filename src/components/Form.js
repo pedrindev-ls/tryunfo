@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Form.css';
 
 class Form extends Component {
   render() {
@@ -13,9 +14,10 @@ class Form extends Component {
       cardRare,
       cardTrunfo,
       // hasTrunfo,
-      isSaveButtonDisabled,
+      // isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
+      buttonStatus,
     } = this.props;
     return (
       <form>
@@ -28,6 +30,7 @@ class Form extends Component {
             data-testid="name-input"
             value={ cardName }
             onChange={ onInputChange }
+            required
           />
         </label>
         <label htmlFor="card-description">
@@ -38,6 +41,7 @@ class Form extends Component {
             data-testid="description-input"
             value={ cardDescription }
             onChange={ onInputChange }
+            required
           />
         </label>
         <label htmlFor="attr1">
@@ -49,6 +53,7 @@ class Form extends Component {
             data-testid="attr1-input"
             value={ cardAttr1 }
             onChange={ onInputChange }
+            required
           />
         </label>
         <label htmlFor="attr2">
@@ -60,6 +65,7 @@ class Form extends Component {
             data-testid="attr2-input"
             value={ cardAttr2 }
             onChange={ onInputChange }
+            required
           />
         </label>
         <label htmlFor="attr3">
@@ -71,6 +77,7 @@ class Form extends Component {
             data-testid="attr3-input"
             value={ cardAttr3 }
             onChange={ onInputChange }
+            required
           />
         </label>
         <label htmlFor="card-id">
@@ -82,6 +89,7 @@ class Form extends Component {
             data-testid="image-input"
             value={ cardImage }
             onChange={ onInputChange }
+            required
           />
         </label>
         <label htmlFor="rarity">
@@ -91,6 +99,7 @@ class Form extends Component {
             data-testid="rare-input"
             value={ cardRare }
             onChange={ onInputChange }
+            required
           >
             <option value="normal">normal</option>
             <option value="raro">raro</option>
@@ -105,6 +114,7 @@ class Form extends Component {
             data-testid="trunfo-input"
             checked={ cardTrunfo }
             onChange={ onInputChange }
+            required
           />
           Carta Trunfo
         </label>
@@ -113,7 +123,7 @@ class Form extends Component {
           id="save-btn"
           type="submit"
           data-testid="save-button"
-          disabled={ isSaveButtonDisabled }
+          disabled={ buttonStatus }
           onClick={ onSaveButtonClick }
         >
           Salvar
