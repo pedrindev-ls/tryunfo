@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Form.css';
+import Trunfo from './Trunfo';
 
 class Form extends Component {
   render() {
@@ -18,10 +19,6 @@ class Form extends Component {
       onInputChange,
       onSaveButtonClick,
     } = this.props;
-
-    // if (!hasTrunfo) {
-
-    // }
 
     return (
       <form>
@@ -110,7 +107,12 @@ class Form extends Component {
             <option value="muito raro">muito raro</option>
           </select>
         </label>
-        <label htmlFor="trunfo">
+        <Trunfo
+          cardTrunfo={ cardTrunfo }
+          onInputChange={ onInputChange }
+          hasTrunfo={ hasTrunfo }
+        />
+        {/* <label htmlFor="trunfo">
           <input
             id="trunfo"
             name="cardTrunfo"
@@ -121,7 +123,7 @@ class Form extends Component {
             disabled={ hasTrunfo }
           />
           Carta Trunfo
-        </label>
+        </label> */}
         <button
           name="save-btn"
           id="save-btn"
