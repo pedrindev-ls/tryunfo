@@ -69,6 +69,18 @@ class App extends React.Component {
     });
   }
 
+  removeCard = (event) => {
+    event.preventDefault();
+    const { cards } = this.state;
+    const { id, value } = event.target;
+    const allCards = cards;
+    allCards.splice(id, 1);
+    this.setState({ cards: allCards });
+    if (value) {
+      this.setState({ hasTrunfo: false });
+    }
+  }
+
   ifHaveTrunfo() {
     this.setState({
       cardTrunfo: false,
@@ -168,7 +180,11 @@ class App extends React.Component {
               />
             </div>
           </div>
-          <CardsSaved whereSaved={ cards } />
+          <CardsSaved
+            whereSaved={ cards }
+            removeCard={ this.removeCard }
+            hasTrunfo={ hasTrunfo }
+          />
         </div>
       </div>
     );

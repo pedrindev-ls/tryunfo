@@ -12,7 +12,6 @@ class Card extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      // whereSave,
     } = this.props;
     return (
       <div>

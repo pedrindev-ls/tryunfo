@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 class EachCard extends Component {
   render() {
-    const { card } = this.props;
+    const { card, removeCard, index, hasTrunfo } = this.props;
+    const trunfo = card.cardTrunfo ? 'Super Trunfo' : '';
     return (
       <div>
         <h4>
@@ -12,10 +13,33 @@ class EachCard extends Component {
         <img src={ card.cardImage } alt={ card.cardName } />
         <p>{ card.cardDescription }</p>
         <div>
-          <p>{ card.cardAttr1 }</p>
-          <p>{ card.cardAttr2 }</p>
-          <p>{ card.cardAttr3 }</p>
+          <p>
+            Atributo 1:
+            {' '}
+            { card.cardAttr1 }
+          </p>
+          <p>
+            Atributo 2:
+            {' '}
+            { card.cardAttr2 }
+          </p>
+          <p>
+            Atributo 3:
+            {' '}
+            { card.cardAttr3 }
+          </p>
         </div>
+        <p>{ card.cardRare }</p>
+        <p>{ trunfo }</p>
+        <button
+          type="button"
+          data-testid="delete-button"
+          onClick={ removeCard }
+          id={ index }
+          value={ hasTrunfo }
+        >
+          Remover
+        </button>
       </div>
     );
   }

@@ -4,11 +4,18 @@ import EachCard from './EachCard';
 
 class CardsSaved extends Component {
   render() {
-    const { whereSaved } = this.props;
+    const { whereSaved, removeCard, hasTrunfo } = this.props;
     return (
       <div>
         {
-          whereSaved.map((card) => <EachCard card={ card } key={ card.cardName } />)
+          whereSaved
+            .map((card, index) => (<EachCard
+              card={ card }
+              key={ index }
+              index={ index }
+              removeCard={ removeCard }
+              hasTrunfo={ hasTrunfo }
+            />))
         }
       </div>
     );

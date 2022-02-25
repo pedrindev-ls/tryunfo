@@ -112,18 +112,6 @@ class Form extends Component {
           onInputChange={ onInputChange }
           hasTrunfo={ hasTrunfo }
         />
-        {/* <label htmlFor="trunfo">
-          <input
-            id="trunfo"
-            name="cardTrunfo"
-            type="checkbox"
-            data-testid="trunfo-input"
-            checked={ cardTrunfo }
-            onChange={ onInputChange }
-            disabled={ hasTrunfo }
-          />
-          Carta Trunfo
-        </label> */}
         <button
           name="save-btn"
           id="save-btn"
