@@ -2,3 +2,10 @@ label {
   display: flex;
   padding: 2%;
 }
+
+.card-description {
+  max-height: 50px;
+  max-width: 200px;
+  min-height: 50px;
+  min-width: 200px;
+}

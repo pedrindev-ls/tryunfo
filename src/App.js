@@ -23,13 +23,16 @@ class App extends React.Component {
       isSaveButtonDisabled: true,
       cards: [],
       hasTrunfo: false,
+      color: {
+        background: 'white',
+      },
     };
   }
 
   onInputChange({ target }) {
     const { name, value } = target;
     const tValue = target.type === 'checkbox' ? target.checked : value;
-    this.setState({ [name]: tValue }, this.validateButton);
+    this.setState({ [name]: tValue }, this.validateButton, this.trunfoColor);
   }
 
   onSaveButtonClick(event) {
@@ -97,7 +100,18 @@ class App extends React.Component {
       cardAttr3,
       cardImage,
       cardRare,
+      cardTrunfo,
     } = this.state;
+
+    if (cardTrunfo) {
+      this.setState({ color: {
+        background: 'goldenrod',
+      } });
+    } else {
+      this.setState({ color: {
+        background: 'white',
+      } });
+    }
 
     const sum = +cardAttr1 + +cardAttr2 + +cardAttr3;
     const maxNum = 210;
@@ -143,6 +157,7 @@ class App extends React.Component {
       cards,
       hasTrunfo,
       textTrunfo,
+      color,
     } = this.state;
     return (
       <div>
@@ -166,7 +181,7 @@ class App extends React.Component {
                 textTrunfo={ textTrunfo }
               />
             </div>
-            <div>
+            <div className="card-preview" style={ color }>
               <Card
                 cardName={ cardName }
                 cardDescription={ cardDescription }

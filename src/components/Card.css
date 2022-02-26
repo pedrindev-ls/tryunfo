@@ -1,0 +1,39 @@
+.complete-card {
+  background-color: lightgray;
+  height: 100%;
+  padding: 3%;
+  width: 100%;
+}
+
+.card-image {
+  width: 300px;
+}
+
+h3 {
+  margin-bottom: 2%;
+}
+
+.card-attr {
+  display: inline-block;
+}
+
+.trunf, .card-rarity {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 1%;
+}
+
+.card-rarity {
+  margin-right: 2%;
+}
+
+.card-description2 {
+  border: 2px solid black;
+  border-radius: 3px;
+  width: 300px;
+  word-wrap: break-word;
+}
+
+.attr div {
+  padding: 0%;
+}

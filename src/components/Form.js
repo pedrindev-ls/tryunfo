@@ -39,6 +39,7 @@ class Form extends Component {
           <textarea
             id="card-description"
             name="cardDescription"
+            className="card-description"
             data-testid="description-input"
             value={ cardDescription }
             onChange={ onInputChange }

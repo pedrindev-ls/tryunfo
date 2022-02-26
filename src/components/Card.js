@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Card.css';
 
 class Card extends Component {
   render() {
@@ -13,20 +14,55 @@ class Card extends Component {
       cardRare,
       cardTrunfo,
     } = this.props;
+
+    const color = {
+      backgroundColor: 'lightgray',
+    };
+
+    if (cardRare === 'normal') {
+      color.backgroundColor = 'lightgray';
+    } else if (cardRare === 'raro') {
+      color.backgroundColor = 'steelblue';
+    } else if (cardRare === 'muito raro') {
+      color.backgroundColor = 'goldenrod';
+    }
+
     return (
-      <div>
-        <h1 data-testid="name-card">{ cardName }</h1>
-        <img src={ cardImage } alt={ cardName } data-testid="image-card" />
-        <p data-testid="description-card">{ cardDescription }</p>
-        <p data-testid="attr1-card">{ cardAttr1 }</p>
-        <p data-testid="attr2-card">{ cardAttr2 }</p>
-        <p data-testid="attr3-card">{ cardAttr3 }</p>
+      <div className="complete-card" style={ color }>
+        <h3 className="card-name" data-testid="name-card">{ cardName }</h3>
+        <img
+          className="card-image"
+          src={ cardImage }
+          alt={ cardName }
+          data-testid="image-card"
+        />
+        <p
+          className="card-description2"
+          data-testid="description-card"
+        >
+          {' '}
+          { cardDescription }
+        </p>
+        <div className="attr">
+          <span>Atk/Def/Resi</span>
+          <div className="attr-group">
+            <p className="card-attr" data-testid="attr1-card">
+              { cardAttr1 }
+              /
+            </p>
+            <p className="card-attr" data-testid="attr2-card">
+              { cardAttr2 }
+              /
+            </p>
+            <p className="card-attr" data-testid="attr3-card">{ cardAttr3 }</p>
+          </div>
+        </div>
         <div>
-          <p data-testid="rare-card">
+          <p className="card-rarity" data-testid="rare-card">
             { cardRare }
             {' '}
           </p>
-          { cardTrunfo ? <p data-testid="trunfo-card"> Super Trunfo</p> : '' }
+          { cardTrunfo ? <p className="trunf" data-testid="trunfo-card"> Trunfo</p> : '' }
         </div>
       </div>
     );
