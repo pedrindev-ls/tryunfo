@@ -11,6 +11,7 @@ class App extends React.Component {
     this.validateButton = this.validateButton.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
     this.ifHaveTrunfo = this.ifHaveTrunfo.bind(this);
+    this.color = this.color.bind(this);
     this.state = {
       cardName: '',
       cardDescription: '',
@@ -25,6 +26,9 @@ class App extends React.Component {
       hasTrunfo: false,
       color: {
         background: 'white',
+      },
+      saveColor: {
+        backgroundColor: 'lightgray',
       },
     };
   }
@@ -47,6 +51,7 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
       cards,
+      saveColor,
     } = this.state;
     cards.push({
       cardName,
@@ -57,6 +62,7 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      saveColor,
     });
     if (cardTrunfo) {
       this.ifHaveTrunfo();
@@ -91,6 +97,30 @@ class App extends React.Component {
     });
   }
 
+  color() {
+    const { cardRare } = this.state;
+
+    if (cardRare === 'normal') {
+      this.setState({
+        saveColor: {
+          backgroundColor: 'lightgray',
+        },
+      });
+    } else if (cardRare === 'raro') {
+      this.setState({
+        saveColor: {
+          backgroundColor: 'steelblue',
+        },
+      });
+    } else if (cardRare === 'muito raro') {
+      this.setState({
+        saveColor: {
+          backgroundColor: 'goldenrod',
+        },
+      });
+    }
+  }
+
   validateButton() {
     const {
       cardName,
@@ -102,6 +132,7 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
     } = this.state;
+    this.color();
 
     if (cardTrunfo) {
       this.setState({ color: {

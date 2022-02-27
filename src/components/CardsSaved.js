@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import EachCard from './EachCard';
+import './CardsSaved.css';
 
 class CardsSaved extends Component {
   render() {
     const { whereSaved, removeCard, hasTrunfo } = this.props;
     return (
-      <div>
+      <div className="flex">
         {
           whereSaved
             .map((card, index) => (<EachCard

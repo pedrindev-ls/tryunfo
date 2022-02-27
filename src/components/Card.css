@@ -37,3 +37,8 @@ h3 {
 .attr div {
   padding: 0%;
 }
+
+.card {
+  margin-left: 1%;
+  padding: 1%;
+}
