@@ -8,7 +8,6 @@ h1 {
 }
 
 .card-preview, .add-info {
-  align-items: center;
   border: 2px solid lightgray;
   display: flex;
   justify-content: center;

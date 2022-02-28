@@ -1,8 +1,5 @@
 .complete-card {
   background-color: lightgray;
-  height: 100%;
-  padding: 3%;
-  width: 100%;
 }
 
 .card-image {
@@ -38,7 +35,7 @@ h3 {
   padding: 0%;
 }
 
-.card {
+.aux {
   margin-left: 1%;
   padding: 1%;
 }

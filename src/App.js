@@ -52,6 +52,7 @@ class App extends React.Component {
       cardTrunfo,
       cards,
       saveColor,
+      color,
     } = this.state;
     cards.push({
       cardName,
@@ -63,6 +64,7 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
       saveColor,
+      color,
     });
     if (cardTrunfo) {
       this.ifHaveTrunfo();
@@ -75,6 +77,9 @@ class App extends React.Component {
       cardAttr2: 0,
       cardAttr3: 0,
       cardRare: 'normal',
+      color: {
+        backgroundColor: 'white',
+      }
     });
   }
 

@@ -62,7 +62,9 @@ class Card extends Component {
             { cardRare }
             {' '}
           </p>
-          { cardTrunfo ? <p className="trunf" data-testid="trunfo-card"> Trunfo</p> : '' }
+          { cardTrunfo
+            ? <p className="trunf" data-testid="trunfo-card"> Trunfo</p>
+            : '' }
         </div>
       </div>
     );
