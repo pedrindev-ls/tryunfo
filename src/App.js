@@ -79,7 +79,7 @@ class App extends React.Component {
       cardRare: 'normal',
       color: {
         backgroundColor: 'white',
-      }
+      },
     });
   }
 
