@@ -63,7 +63,7 @@ class Card extends Component {
             {' '}
           </p>
           { cardTrunfo
-            ? <p className="trunf" data-testid="trunfo-card"> Trunfo</p>
+            ? <p className="trunf" data-testid="trunfo-card">Super Trunfo</p>
             : '' }
         </div>
       </div>
